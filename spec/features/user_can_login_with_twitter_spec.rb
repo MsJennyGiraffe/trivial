@@ -9,7 +9,7 @@ RSpec.feature "User can login" do
     click_link ("Sign In with Twitter")
 
     expect(current_path).to eq("/")
-    expect(page).to have_content("Welcome")
+    expect(page).to have_content("Welcome Jenny")
     expect(page).to have_content("Logout")
   end
 end
