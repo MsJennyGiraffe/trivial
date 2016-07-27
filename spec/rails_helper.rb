@@ -5,6 +5,24 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 
+def stub_omniauth
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+    provider: 'twitter',
+    extra: {
+      raw_info: {
+        user_id: "1234",
+        name: "Jenny",
+        screen_name: "MsJennyGiraffe"
+      }
+    },
+    credentials: {
+      token: "tolkien",
+      secret: "secrettolkien"
+    }
+  })
+end
+
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
