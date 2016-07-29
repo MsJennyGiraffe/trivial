@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727233801) do
+ActiveRecord::Schema.define(version: 20160729023017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "rounds", force: :cascade do |t|
+    t.integer  "correct"
+    t.integer  "out_of"
+    t.integer  "users_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_rounds_on_users_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -24,4 +33,5 @@ ActiveRecord::Schema.define(version: 20160727233801) do
     t.string "picture"
   end
 
+  add_foreign_key "rounds", "users", column: "users_id"
 end
