@@ -59,41 +59,26 @@
 <row name="picture" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="score_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="score" row="id" />
-</row>
-<row name="friends" null="1" autoincrement="0">
+<row name="overall_score" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="659" y="68" name="Rounds">
+<table x="597" y="170" name="Rounds">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="correct" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="total" null="1" autoincrement="0">
+<row name="out_of" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="458" y="47" name="score">
-<row name="id" null="1" autoincrement="1">
+<row name="users_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="overall_score" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="rounds_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Rounds" row="id" />
+<default>NULL</default><relation table="Users" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
