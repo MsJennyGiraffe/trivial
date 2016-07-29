@@ -12,6 +12,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem "omniauth-twitter"
 gem "figaro"
+gem "faraday"
+gem "vcr"
+gem "webmock"
 
 group :development, :test do
   gem 'byebug', platform: :mri
