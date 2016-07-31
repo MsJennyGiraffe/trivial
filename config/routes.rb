@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get "/auth/twitter/callback", to: "sessions#create"
   delete "/logout", to: "sessions#destroy", as: "logout"
   resources :users, only: [:show]
-  resources :rounds, only:[:index]
+  resources :rounds, only:[:index, :show, :new]
 end

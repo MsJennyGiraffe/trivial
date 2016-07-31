@@ -15,7 +15,6 @@ gem "figaro"
 gem "faraday"
 gem "vcr"
 gem "webmock"
-# gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri

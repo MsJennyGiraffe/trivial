@@ -1,0 +1,10 @@
+<h3><%= @question.text %></h3>
+
+<% form_for(@round) do |f| %>
+<%= f.radio_button :questions, @round.questions.first %>
+<%= @round.questions.first %>
+<%# @wrong_answers.each do |answer| %>
+<%#= answer.text %>
+<%# end %>
+<%#= submit_tag "Next" %>
+<% end %>

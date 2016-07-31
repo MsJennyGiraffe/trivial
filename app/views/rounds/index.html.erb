@@ -1,11 +1,6 @@
 <% @questions.each do |question| %>
-  <h4>Question: <%= question.question %></h4>
+  <h4>Question: <%= question.text %></h4>
 
-  <p><%= radio_button_tag(:answer, "correct   answer") %>
-    <%= label_tag(:correct_answer, question.correct_answer) %></p>
-
-    <% question.answers.each do |answer| %>
-    <p><%= radio_button_tag(:answer, "incorrect answer") %>
-    <%= label_tag(:incorrect_answer, answer) %></p>
-  <% end %>
+  <p><%= radio_button_tag(:answer, "correct answer") %>
+    <%= label_tag(:correct_answer, question.answer.text) %></p>
 <% end %>
