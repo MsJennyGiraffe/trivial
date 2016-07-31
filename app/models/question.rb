@@ -1,4 +1,4 @@
-class Question
+class Question 
   def initialize(question, answer, answers)
     @_question = question
     @_correct_answer = answer

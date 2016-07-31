@@ -1,15 +1,11 @@
-<%= form_for(@round) do |f| %>
-
 <% @questions.each do |question| %>
   <h4>Question: <%= question.question %></h4>
 
-  <p><%= f.radio_button_tag(:answer, "correct   answer") %>
-    <%= f.label_tag(:correct_answer, question.correct_answer) %></p>
+  <p><%= radio_button_tag(:answer, "correct   answer") %>
+    <%= label_tag(:correct_answer, question.correct_answer) %></p>
 
     <% question.answers.each do |answer| %>
-    <p><%= f.radio_button_tag(:answer, "incorrect answer") %>
-    <%= f.label_tag(:incorrect_answer, answer) %></p>
+    <p><%= radio_button_tag(:answer, "incorrect answer") %>
+    <%= label_tag(:incorrect_answer, answer) %></p>
   <% end %>
-<% end %>
-
 <% end %>
