@@ -1,0 +1,13 @@
+<h3><%= @round.questions.first.text %></h3>
+
+<%= form_for(@round) do |f| %>
+  <h5>
+    <%= f.radio_button(:questions, "correct answer")%>
+    <%= f.label(:correct_answer, @round.questions.first.answer.text) %> </h5>
+
+    <% @wrong_answers.each do |answer| %>
+      <h5> <%= f.radio_button(:questions, "incorrect answer") %>
+      <%= f.label(:incorrect_answer, answer.text) %></h5>
+  <% end %>
+<%= f.submit %>
+<% end %>

@@ -15,12 +15,15 @@ gem "figaro"
 gem "faraday"
 gem "vcr"
 gem "webmock"
+gem 'simplecov', :require => false, :group => :test
 
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :development do
