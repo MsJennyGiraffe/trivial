@@ -1,0 +1,9 @@
+<div class="col-md-8 col-md-offset-2">
+<% if @verdict == "correct answer" %>
+Congrats! You knew the answer was: <%= @round.questions.first.answer.text %>
+<% else %>
+No! The correct answer was: <%= @round.questions.first.answer.text %>
+<% end %>
+
+<h4>Current Score: <%= @round.correct %></h4>
+</div>

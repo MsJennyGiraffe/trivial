@@ -20,3 +20,5 @@
 /config/application.yml
 
 /spec/vcr_cassettes
+
+coverage

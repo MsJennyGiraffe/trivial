@@ -1,6 +1,10 @@
 class RoundsController < ApplicationController
   def index
-    @questions = Question.make_questions
+  end
+
+  def new
+    @round = Round.set_round
+    redirect_to round_path(@round)
   end
 
   def show
@@ -8,8 +12,9 @@ class RoundsController < ApplicationController
     @round = Round.find(params[:id])
   end
 
-  def new
-    @round = Round.set_round
-    redirect_to round_path(@round)
+  def update
+    @round = Round.find(params[:id])
+    @verdict = params["round"]["questions"]
+    @round.correct += 1 if @verdict == "correct answer"
   end
 end
